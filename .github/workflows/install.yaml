@@ -22,7 +22,7 @@ jobs:
         uses: medyagh/setup-minikube@latest
       - name: Minicube info
         run: |
-          echo -e "The deployment of minicube took(($(date '+%s')-${{ steps.start-time.outputs.start-time }})) seconds\n" >> ${{env.report-file}}
+          echo -e "The deployment of minicube took $(($(date '+%s')-${{ steps.start-time.outputs.start-time }})) seconds\n" >> ${{env.report-file}}
           echo -e "K8s version:\n$(kubectl version --short)\n" >> ${{ env.report-file }}
           echo -e "Count of nodes: $(kubectl get nodes | grep -c 'Ready')" >> ${{ env.report-file }}
       - name: Upload report
@@ -44,7 +44,7 @@ jobs:
         uses: helm/kind-action@v1.4.0
       - name: KinD info
         run: |
-          echo -e "The deployment of KinD took(($(date '+%s')-${{ steps.start-time.outputs.start-time }})) seconds\n" >> ${{env.report-file}}
+          echo -e "The deployment of KinD took $(($(date '+%s')-${{ steps.start-time.outputs.start-time }})) seconds\n" >> ${{env.report-file}}
           echo -e "K8s version:\n$(kubectl version --short)\n" >> ${{ env.report-file }}
           echo -e "Count of nodes: $(kubectl get nodes | grep -c 'Ready')" >> ${{ env.report-file }}
       - name: Upload report
