@@ -3,7 +3,7 @@ name: Kind vs Minikube
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   minikube:
