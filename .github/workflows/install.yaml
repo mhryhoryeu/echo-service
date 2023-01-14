@@ -26,7 +26,7 @@ jobs:
           echo -e "K8s version:\n$(kubectl version --short)\n" >> ${{ env.report-file }}
           echo -e "Count of nodes: $(kubectl get nodes | grep -c 'Ready')" >> ${{ env.report-file }}
       - name: Upload report
-        uses: actions/upload-artifact@3
+        uses: actions/upload-artifact@v3
         with:
           path: ${{ env.report-file}}
   kind:
@@ -48,6 +48,6 @@ jobs:
           echo -e "K8s version:\n$(kubectl version --short)\n" >> ${{ env.report-file }}
           echo -e "Count of nodes: $(kubectl get nodes | grep -c 'Ready')" >> ${{ env.report-file }}
       - name: Upload report
-        uses: actions/upload-artifact@3
+        uses: actions/upload-artifact@v3
         with:
           path: ${{ env.report-file}}
